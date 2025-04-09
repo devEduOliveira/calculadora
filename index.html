@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./styles/styles.css">
+    <script src="./script.js" defer></script>
+</head>
+<body>
+    
+    <seciton id="calculadora">
+        <div class="title">
+            <i class="fa-solid fa-calculator"></i>
+            <h4>calculadora</h4>
+        </div>
+
+        <div class="viewSection">
+            <div class="view">
+
+                <h4 id="viewText">34 * 12 + 16 - 20 4 * 12 + 16 - 20</h4>
+            </div>
+        </div>
+
+        <div class="buttonsSection">
+
+            <div class="top">
+                <div class="card" onclick="clearAllView()">C</div>
+                <div class="card" onclick="removeNumberInView()">
+                    <i class="fa-solid fa-delete-left"></i>
+                </div>
+                <div onclick="addElementInView(this)" class="card">*</div>
+                <div onclick="addElementInView(this)" class="card">/</div>
+            </div>
+
+            <div class="numbers">
+            </div>
+
+            <div class="operators1">
+                <div onclick="addElementInView(this)" class="card">+</div>
+                <div onclick="addElementInView(this)" class="card">-</div>
+                <div onclick="result()" class="cardDuble">=</div>
+            </div>
+
+           
+            
+
+        </div>
+    </seciton>
+
+</body>
+</html>

@@ -1,0 +1,130 @@
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css');
+
+:root{
+    --font-icons: "Font Awesome 6 Free";
+}
+
+*{
+    border: 0;
+    padding: 0;
+    margin: 0;
+
+    box-sizing: border-box;
+}
+
+
+#calculadora{
+    position: absolute;
+    width: 350px;
+    height: 600px;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border: 2px solid #000;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    .title{
+        width: 100%;
+        padding: 2px 0;
+        border-bottom: 2px solid #000;
+
+        display: flex;
+        gap: 8px;
+
+        h4{
+            width: 90%;
+            text-transform: capitalize;
+            font-weight: 400;
+        }
+
+        i{
+            text-align: center;
+            display: flex;
+            align-items: center;
+            margin-left: 10px;
+        }
+    }
+
+    .viewSection{
+        width: 100%;
+        height: 150px;
+        border-bottom: 2px solid #000;
+
+        .view{
+            width: 100%;
+            height: 100%;
+            padding: 10px 30px;
+         
+            display: flex;
+            align-items: end;
+            justify-content: start;
+            overflow: hidden;
+
+            h4{
+                width: 100%;
+                text-align: left;
+
+                display: flex;
+                flex-wrap: wrap;
+
+                word-break: break-all;
+
+            }
+        }
+    }
+
+    .buttonsSection{
+        width: 90%;
+        height: 420px;
+        display: flex;
+        justify-content: start;
+        flex-wrap: wrap;
+
+        padding: 20px 0;
+
+        .top{
+            width: 305px;
+
+            display: flex;
+            justify-content: space-around;
+        }
+        .numbers, .operators1{
+            width: 230px;
+            height: 300px;
+
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .operators1{
+            width: 75px;
+            height: 300px;
+        }
+
+        .card, .cardDuble{
+            cursor: pointer;
+            width: 70px;
+            height: 70px;
+            box-shadow: inset 1px 1px 5px 1px rgba(0, 0, 0, 0.35) ;
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .cardDuble{
+            height: 145px;
+        }
+    }
+}
