@@ -27,9 +27,57 @@ function captureClickInCard(element) {
     addElementInView(element.innerText)
 }
 
-function addElementInView(value){
-    view.innerText += value.innerText;
+function addElementInView(valueParam){
+    let latterValue = view.innerText.slice(-1)
+    let value = valueParam.innerText
+    let operators = ["+", "-", "*", "/"];
+
+    // verifica se é numero
+    if(!isNaN(value)){
+        view.innerText += value;
+    
+    // verifica se é operador
+    } else if(operators.includes(value)){
+        console.log("operadores");
+
+        // trocar o includes por um metodo feito por mim
+        if(operators.includes(latterValue)){
+            console.log("operador antigo");
+            removeNumberInView()
+            view.innerText += value;
+        } else {
+            view.innerText += value;
+        }
+    } else {
+        // ponto
+        
+        if (podeAdicionarPonto(view.innerHTML)) {
+            console.log("Sim");
+            view.innerText += value;
+        } else {
+            console.log("nao");
+            
+        }
+    }
+
+    
+    
 }
+
+// funcao de verificar ponto entre os operadores
+function podeAdicionarPonto(expressao) {
+    if (expressao === "") return false; // não pode começar com ponto
+  
+    const ultimoChar = expressao.slice(-1);
+    if (["+", "-", "*", "/"].includes(ultimoChar)) {
+      return false; // não pode ponto logo após operador
+    }
+  
+    const partes = expressao.split(/[\+\-\*\/]/);
+    const ultimoNumero = partes[partes.length - 1];
+  
+    return !ultimoNumero.includes(".");
+  }
 
 function removeNumberInView(){
     let viewText = view.innerText
@@ -37,7 +85,7 @@ function removeNumberInView(){
 }
 
 function clearAllView(){
-    view.innerHTML = ""
+    view.innerHTML = 0
 }
 
 function result(){
